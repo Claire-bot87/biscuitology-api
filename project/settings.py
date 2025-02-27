@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'biscuits',
+    'pairings',
 ]
 
 MIDDLEWARE = [

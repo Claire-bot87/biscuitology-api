@@ -1,4 +1,5 @@
 from django.db import models
+#from pairings.models import Pairings
 
 TYPES = [
     ("Chocolate", "Chocolate"),
@@ -16,6 +17,12 @@ class Biscuits(models.Model):
     taste = models.JSONField (default=list) 
     texture = models.JSONField (default=list)
     dunkability = models.JSONField (default=list)
-
+   # pairing = models.ForeignKey(
+      #  to=Pairings,
+    #    on_delete=models.CASCADE,
+    #    related_name='matched_biscuit', 
+   #     null=True, 
+   #     blank=True 
+  #  )
     def _str_(self):
         return self.name
