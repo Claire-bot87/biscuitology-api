@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # Serializers
 from .serializers.common import BiscuitsSerializer 
@@ -11,7 +12,7 @@ from .models import Biscuits
 # Create your views here.
 
 class BiscuitListView(APIView):
-
+    permission_classes = [IsAuthenticatedOrReadOnly]
     def get(self, request):
        
         biscuits_queryset = Biscuits.objects.all()
@@ -19,8 +20,9 @@ class BiscuitListView(APIView):
         print(biscuits_serialized.data)
         return Response(biscuits_serialized.data)
     
+    
     def post(self, request):
-
+        request.data['user'] = request.user.id
         #1. pass the request.data into the serializer for deserialization
         biscuit_serializer = BiscuitsSerializer(data=request.data)# the data key is for data that will be added
 #2.check that the data is valid
@@ -35,7 +37,7 @@ class BiscuitListView(APIView):
 
 #* /biscuits/:biscuit_id - GET show, PUT update, DELETE delete
 class BiscuitDetailView(APIView):
-        
+    permission_classes = [IsAuthenticatedOrReadOnly]
     def get_object(self, biscuit_id):
         try:
              biscuit = Biscuits.objects.get(id=biscuit_id)

@@ -1,0 +1,103 @@
+[
+  {
+      "model": "biscuits.biscuits",
+      "pk": 1,
+      "fields": {
+          "name": "Chocolate Chip Cookie",
+          "description": "A classic chocolate chip cookie with a soft and chewy texture.",
+          "type": "Chocolate",
+          "image": "https://scientificallysweet.com/wp-content/uploads/2020/11/IMG_5309-brown-butter-chocolate-chip-cookies-feature.jpg"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 2,
+      "fields": {
+          "name": "Shortbread",
+          "description": "A rich and buttery biscuit with a crumbly texture.",
+          "type": "Basic",
+          "image": "https://www.tasteofhome.com/wp-content/uploads/2024/08/Scottish-Shortbread_EXPS_FT24_1889_JR_0801_8.jpg"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 3,
+      "fields": {
+          "name": "Digestive Biscuit",
+          "description": "A sweet, whole wheat biscuit, often enjoyed with tea.",
+          "type": "Basic",
+          "image": "https://www.cibimarket.co.uk/cdn/shop/products/theoriginal_69452b99-97ab-4e98-bb79-46538651a45d.png?v=1709742080"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 4,
+      "fields": {
+          "name": "Oatmeal Raisin Cookie",
+          "description": "Chewy oatmeal cookie with a hint of cinnamon and plump raisins.",
+          "type": "Special",
+          "image": "https://www.recipetineats.com/tachyon/2016/07/Oatmeal-Raisin-Cookies_3-SQ.jpg"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 5,
+      "fields": {
+          "name": "Ginger Nut Biscuit",
+          "description": "Spicy and crunchy biscuit with a strong ginger flavor.",
+          "type": "Savoury",
+          "image": "https://api.photon.aremedia.net.au/wp-content/uploads/sites/4/2019/09/03/8328/gingernut-hero-scaled.jpg?resize=1200%2C630"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 6,
+      "fields": {
+          "name": "Chocolate Bourbon",
+          "description": "A chocolate-flavored biscuit sandwich with a rich cream filling.",
+          "type": "Chocolate",
+          "image": "https://www.janespatisserie.com/wp-content/uploads/2024/02/BourbonBiscuits14-2-533x800.jpg"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 7,
+      "fields": {
+          "name": "Lemon Biscuit",
+          "description": "A light, zesty biscuit with a fresh lemon flavor.",
+          "type": "Special",
+          "image": "https://pickyeaterblog.com/wp-content/uploads/2023/07/lemon-biscuit-recipe.jpg"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 8,
+      "fields": {
+          "name": "Jammy Dodger",
+          "description": "A biscuit with a raspberry jam filling, sandwiched between two biscuits.",
+          "type": "Special",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCAZX90Nb0zwGRb_HDoLdUxRTJtXGSI12rw&s"}
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 9,
+      "fields": {
+          "name": "Rich Tea Biscuit",
+          "description": "A simple, crunchy biscuit that pairs well with tea.",
+          "type": "Basic",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGlQHO8YHpX2ZONy2-vppF-IL1qcWpr5elPg&s"
+      }
+  },
+  {
+      "model": "biscuits.biscuits",
+      "pk": 10,
+      "fields": {
+          "name": "Parle-G Biscuit",
+          "description": "A popular, simple biscuit made with wheat flour and sugar.",
+          "type": "Basic",
+          "image": "https://m.media-amazon.com/images/I/61OBwVfyXUL.jpg"
+      }
+  }
+]
+
+

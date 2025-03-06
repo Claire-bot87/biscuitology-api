@@ -1,0 +1,44 @@
+[
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Tea",
+      "description": "A hot or cold beverage made from the leaves of the Camellia sinensis plant, typically enjoyed with or without milk and sugar."
+  }
+},
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Espresso",
+      "description": "A strong, concentrated coffee brewed by forcing hot water through finely-ground coffee beans, often served in small portions."
+  }
+},
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Red Wine",
+      "description": "A type of wine made from dark-colored grape varieties, known for its rich flavors and tannins, often served with red meats or cheese."
+  }
+},
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Coffee",
+      "description": "A brewed beverage made from roasted coffee beans, commonly served hot or cold, and enjoyed with or without milk and sugar."
+  }
+},
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Lemonade",
+      "description": "A refreshing drink made from lemon juice, water, and sugar, often served chilled, and a popular beverage in warm weather."
+  }
+},
+{
+  "model": "pairings.Pairings",
+  "fields": {
+      "name": "Milk",
+      "description": "Cold and refreshing. Non dairy options also available."
+  }
+}
+]

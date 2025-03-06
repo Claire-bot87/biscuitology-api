@@ -11,4 +11,4 @@ class PairingListView(ListCreateAPIView):
 
 class PairingDetailView(RetrieveUpdateDestroyAPIView):
         queryset = Pairings.objects.all()
-        seriaizer_class = PairingSerializer
+        serializer_class = PairingSerializer

@@ -6,6 +6,7 @@ from .serializers.common import UserSerializer
 import jwt
 from django.conf import settings
 from datetime import datetime, timedelta
+
 User = get_user_model()
 
 # /auth/register/
