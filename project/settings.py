@@ -51,10 +51,10 @@ if DEBUG:
     ]
 
 else:
-    ALLOWED_HOSTS = ['your-backend.herokuapp.com'] # don't include the protocol (https://)
+    ALLOWED_HOSTS = ['biscuitology-018990a96961.herokuapp.com'] # don't include the protocol (https://)
 
     CORS_ALLOWED_ORIGINS = [
-        "https://your-frontend.com", # Deployed frontend url only
+        "https://biscuitology.netlify.app", # Deployed frontend url only
     ]
 
     CSRF_TRUSTED_ORIGINS = [
@@ -125,10 +125,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'biscuitology-api',
-        'HOST':'localhost',
-        'PORT': 5432
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':'biscuitology-api',
+            'HOST':'localhost',
+            'PORT': 5432
         }
     }
 else:
@@ -194,6 +194,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
-]
