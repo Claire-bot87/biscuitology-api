@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -17,6 +18,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 import dj_database_url # note the underscores NOT hyphens on import
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -31,12 +33,33 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
-
+ALLOWED_HOSTS = []
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1'] # local frontend urls without protocols
+
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:5173", # Local frontend url
+    ]
+
+    CSRF_TRUSTED_ORIGINS = [
+        "http://127.0.0.1:8000", # Local backend url
+        "http://localhost:8000" # localhost for good measure
+    ]
+
+else:
+    ALLOWED_HOSTS = ['your-backend.herokuapp.com'] # don't include the protocol (https://)
+
+    CORS_ALLOWED_ORIGINS = [
+        "https://your-frontend.com", # Deployed frontend url only
+    ]
+
+    CSRF_TRUSTED_ORIGINS = [
+        "https://biscuitology-018990a96961.herokuapp.com", # Deployed backend url only
+    ]
 
 
 # Application definition
@@ -56,8 +79,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+ 
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -150,7 +175,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# This is the URL where the assets can be publicly accessed
+STATIC_URL = '/static/'
+
+# Tell Django the absolute path to store those assets - call the folder `staticfiles`
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# This production code might break development mode, so we check whether we're in DEBUG mode before setting the STATICFILES_STORAGE
+if not DEBUG:
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
