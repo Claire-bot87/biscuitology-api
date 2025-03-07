@@ -16,6 +16,8 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
+import dj_database_url # note the underscores NOT hyphens on import
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
@@ -94,14 +96,24 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'biscuitology-api',
         'HOST':'localhost',
         'PORT': 5432
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            env('DATABASE_URL'),
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
 
 
 # Password validation

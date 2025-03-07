@@ -12,6 +12,7 @@ djangorestframework = "*"
 pyjwt = "*"
 django-cors-headers = "*"
 django-environ = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
